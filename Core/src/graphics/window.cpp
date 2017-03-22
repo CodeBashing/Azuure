@@ -2,7 +2,7 @@
 
 namespace azuure { namespace graphics {
 	/*Constructor and Destructor*/
-	Window::Window(const char* title, int width, int height)
+	Window::Window(const char *title, int width, int height)
 	{
 		m_title = title;
 		m_width = width;
@@ -17,17 +17,6 @@ namespace azuure { namespace graphics {
 		glfwTerminate();
 	}
 
-	/*Getters and Setters*/
-	bool Window::Closed() const {
-		return glfwWindowShouldClose(m_window);
-	}
-	inline int Window::GetWidth() const {
-		return m_width;
-	}
-	inline int Window::GetHeight() const {
-		return m_height;
-	}
-
 	/*Public Methodes*/
 	void Window::Clear() const {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -35,6 +24,9 @@ namespace azuure { namespace graphics {
 	void Window::Update() {
 		glfwPollEvents();
 		glfwSwapBuffers(m_window);
+	}
+	bool Window::Closed() const {
+		return glfwWindowShouldClose(m_window);
 	}
 
 	/*Private Methodes*/
@@ -65,7 +57,7 @@ namespace azuure { namespace graphics {
 		std::cout << "OpenGL: " << glGetString(GL_VERSION) << std::endl;
 		return true;
 	}
-	void Window::WindowResize(GLFWwindow * window, int width, int height) {
+	void Window::WindowResize(GLFWwindow *window, int width, int height) {
 		glViewport(0, 0, width, height);
 	}
 }}
