@@ -25,10 +25,10 @@ namespace azuure { namespace graphics {
 		void Enable();
 		void Disable();
 
-		void SetUniform2f(const GLchar* name, const glm::vec2 &vector);
-		void SetUniform3f(const GLchar* name, const glm::vec3 &vector);
-		void SetUniform4f(const GLchar* name, const glm::vec4 &vector);
-		void SetUniformMat4(const GLchar* name, const glm::mat4 &matrix);
+		void SetUniform2f(const GLchar *name, const glm::vec2 &vector);
+		void SetUniform3f(const GLchar *name, const glm::vec3 &vector);
+		void SetUniform4f(const GLchar *name, const glm::vec4 &vector);
+		void SetUniformMat4(const GLchar *name, const glm::mat4 &matrix);
 	private:
 		GLuint Load();
 		inline GLint GetUniformLocation(const GLchar *name) { return glGetUniformLocation(m_shaderID, name); }

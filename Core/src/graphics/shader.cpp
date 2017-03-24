@@ -21,16 +21,16 @@ namespace azuure { namespace graphics {
 		glUseProgram(0);
 	}
 
-	void Shader::SetUniform2f(const GLchar * name, const glm::vec2 & vector) {
+	void Shader::SetUniform2f(const GLchar *name, const glm::vec2 & vector) {
 		glUniform2f(GetUniformLocation(name), vector.x, vector.y);
 	}
-	void Shader::SetUniform3f(const GLchar * name, const glm::vec3 & vector) {
+	void Shader::SetUniform3f(const GLchar *name, const glm::vec3 & vector) {
 		glUniform3f(GetUniformLocation(name), vector.x, vector.y, vector.z);
 	}
-	void Shader::SetUniform4f(const GLchar * name, const glm::vec4 & vector) {
+	void Shader::SetUniform4f(const GLchar *name, const glm::vec4 & vector) {
 		glUniform4f(GetUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
 	}
-	void Shader::SetUniformMat4(const GLchar * name, const glm::mat4 & matrix) {
+	void Shader::SetUniformMat4(const GLchar *name, const glm::mat4 & matrix) {
 		glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 
